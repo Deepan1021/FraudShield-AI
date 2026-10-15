@@ -1,0 +1,343 @@
+{
+  "_note": "Synthetic demonstration data. Not real customer data.",
+  "users": {
+    "USER001": {
+      "display_name": "Synthetic User 001",
+      "average_amount": 15000,
+      "usual_frequency": 4,
+      "known_devices": [
+        "DEV001"
+      ],
+      "known_locations": [
+        "Chennai"
+      ],
+      "usual_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "USER002": {
+      "display_name": "Synthetic User 002",
+      "average_amount": 3000,
+      "usual_frequency": 2,
+      "known_devices": [
+        "DEV002"
+      ],
+      "known_locations": [
+        "Chennai"
+      ],
+      "usual_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "USER003": {
+      "display_name": "Synthetic User 003",
+      "average_amount": 3000,
+      "usual_frequency": 2,
+      "known_devices": [
+        "DEV003A",
+        "DEV003B"
+      ],
+      "known_locations": [
+        "Bengaluru",
+        "Kolkata"
+      ],
+      "usual_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "USER004": {
+      "display_name": "Synthetic User 004",
+      "average_amount": 12000,
+      "usual_frequency": 2,
+      "known_devices": [
+        "DEV004A",
+        "DEV004B"
+      ],
+      "known_locations": [
+        "Hyderabad"
+      ],
+      "usual_hours": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    "USER005": {
+      "display_name": "Synthetic User 005",
+      "average_amount": 5000,
+      "usual_frequency": 2,
+      "known_devices": [
+        "DEV005A",
+        "DEV005B"
+      ],
+      "known_locations": [
+        "Pune"
+      ],
+      "usual_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "USER006": {
+      "display_name": "Synthetic User 006",
+      "average_amount": 3000,
+      "usual_frequency": 4,
+      "known_devices": [
+        "DEV006A",
+        "DEV006B"
+      ],
+      "known_locations": [
+        "Kolkata",
+        "Kochi"
+      ],
+      "usual_hours": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    "USER007": {
+      "display_name": "Synthetic User 007",
+      "average_amount": 8000,
+      "usual_frequency": 3,
+      "known_devices": [
+        "DEV007A",
+        "DEV007B"
+      ],
+      "known_locations": [
+        "Ahmedabad"
+      ],
+      "usual_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "USER008": {
+      "display_name": "Synthetic User 008",
+      "average_amount": 8000,
+      "usual_frequency": 4,
+      "known_devices": [
+        "DEV008A",
+        "DEV008B"
+      ],
+      "known_locations": [
+        "Jaipur"
+      ],
+      "usual_hours": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    "USER009": {
+      "display_name": "Synthetic User 009",
+      "average_amount": 8000,
+      "usual_frequency": 3,
+      "known_devices": [
+        "DEV009A",
+        "DEV009B"
+      ],
+      "known_locations": [
+        "Kochi",
+        "Delhi"
+      ],
+      "usual_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "USER010": {
+      "display_name": "Synthetic User 010",
+      "average_amount": 8000,
+      "usual_frequency": 4,
+      "known_devices": [
+        "DEV010A",
+        "DEV010B"
+      ],
+      "known_locations": [
+        "Chennai"
+      ],
+      "usual_hours": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    "USER011": {
+      "display_name": "Synthetic User 011",
+      "average_amount": 15000,
+      "usual_frequency": 4,
+      "known_devices": [
+        "DEV011A",
+        "DEV011B"
+      ],
+      "known_locations": [
+        "Mumbai"
+      ],
+      "usual_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    "USER012": {
+      "display_name": "Synthetic User 012",
+      "average_amount": 22000,
+      "usual_frequency": 2,
+      "known_devices": [
+        "DEV012A",
+        "DEV012B"
+      ],
+      "known_locations": [
+        "Delhi",
+        "Pune"
+      ],
+      "usual_hours": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    }
+  }
+}

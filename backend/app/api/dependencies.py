@@ -1,0 +1,13 @@
+from __future__ import annotations
+
+from fastapi import Request
+
+from app.services.container import Container
+
+
+def get_container(request: Request) -> Container:
+    return request.app.state.container
+
+
+def ok(data, **extra) -> dict:
+    return {"success": True, "data": data, **extra}

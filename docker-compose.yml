@@ -1,0 +1,15 @@
+services:
+  fraudshield:
+    build: .
+    image: fraudshield-ai:1.0.0
+    ports:
+      - "8000:8000"
+    environment:
+      AUTO_SEED_DEMO: "${AUTO_SEED_DEMO:-true}"   # synthetic demonstration data on first start
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+    volumes:
+      - fraudshield_data:/data                    # SQLite database, reports, backups and logs persist here
+    restart: unless-stopped
+
+volumes:
+  fraudshield_data:

@@ -1,0 +1,647 @@
+{
+ "name": "FraudShield Expert Rule Base",
+ "rulebase_version": "1.0.0",
+ "rules": [
+  {
+   "id": "R01",
+   "name": "Untrusted device is unverified",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "UntrustedDevice(x)"
+   ],
+   "then": "UnverifiedDevice(x)",
+   "description": "An UNTRUSTED device signature means the device cannot be verified.",
+   "explanation": "The device trust signature is UNTRUSTED, so the device is treated as unverified.",
+   "tags": [
+    "device",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R02",
+   "name": "Unknown device is unverified",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "UnknownDevice(x)"
+   ],
+   "then": "UnverifiedDevice(x)",
+   "description": "An UNKNOWN device signature means the device cannot be verified.",
+   "explanation": "The device trust signature is UNKNOWN, so the device is treated as unverified.",
+   "tags": [
+    "device",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R03",
+   "name": "New device ID is unverified",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "NewDevice(x)"
+   ],
+   "then": "UnverifiedDevice(x)",
+   "description": "A device ID never seen for this user cannot be verified against history.",
+   "explanation": "The device ID is not among the user's known devices, so it is treated as unverified.",
+   "tags": [
+    "device",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R04",
+   "name": "High amount is elevated value",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "HighAmount(x)"
+   ],
+   "then": "ElevatedValue(x)",
+   "description": "A payment above the high-value threshold is an elevated-value transaction.",
+   "explanation": "The amount reaches the high-value threshold, so the transaction value is elevated.",
+   "tags": [
+    "amount",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R05",
+   "name": "Amount spike is elevated value",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "AmountSpike(x)"
+   ],
+   "then": "ElevatedValue(x)",
+   "description": "An amount far above the user's average is an elevated-value transaction.",
+   "explanation": "The amount is a large multiple of the user's average, so the transaction value is elevated.",
+   "tags": [
+    "amount",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R06",
+   "name": "Suspicious login is an authentication anomaly",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "SuspiciousLogin(x)"
+   ],
+   "then": "AuthenticationAnomaly(x)",
+   "description": "Suspicious or high-risk login behaviour is an authentication anomaly.",
+   "explanation": "Login behaviour was flagged suspicious, which is an authentication anomaly.",
+   "tags": [
+    "authentication",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R07",
+   "name": "Failed logins are an authentication anomaly",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "FailedLoginAttempts(x)"
+   ],
+   "then": "AuthenticationAnomaly(x)",
+   "description": "A failed-login pattern preceding a payment is an authentication anomaly.",
+   "explanation": "Failed login attempts were observed, which is an authentication anomaly.",
+   "tags": [
+    "authentication",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R08",
+   "name": "Unusual login is an authentication anomaly",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "UnusualLogin(x)"
+   ],
+   "then": "AuthenticationAnomaly(x)",
+   "description": "Unusual login behaviour is a weak authentication anomaly.",
+   "explanation": "Login behaviour was unusual, which is an authentication anomaly.",
+   "tags": [
+    "authentication",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R09",
+   "name": "Dormant account is an account anomaly",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "DormantAccount(x)"
+   ],
+   "then": "AccountAnomaly(x)",
+   "description": "Sudden use of a dormant account is an account lifecycle anomaly.",
+   "explanation": "The account was dormant, which is an account anomaly.",
+   "tags": [
+    "account",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R10",
+   "name": "Reactivated account is an account anomaly",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "RecentlyReactivated(x)"
+   ],
+   "then": "AccountAnomaly(x)",
+   "description": "A recently reactivated account is an account lifecycle anomaly.",
+   "explanation": "The account was recently reactivated, which is an account anomaly.",
+   "tags": [
+    "account",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R11",
+   "name": "Suspicious account activity is an account anomaly",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "SuspiciousAccountActivity(x)"
+   ],
+   "then": "AccountAnomaly(x)",
+   "description": "Suspicious or unusual account activity is an account anomaly.",
+   "explanation": "The account activity history is suspicious or unusual, which is an account anomaly.",
+   "tags": [
+    "account",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R12",
+   "name": "Night transaction is off-hours activity",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "NightTransaction(x)"
+   ],
+   "then": "OffHoursActivity(x)",
+   "description": "A transaction between 00:00 and 05:59 is off-hours activity.",
+   "explanation": "The transaction occurred during the night window, which is off-hours activity.",
+   "tags": [
+    "temporal",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R13",
+   "name": "Unusual hour is off-hours activity",
+   "category": "Evidence Normalisation",
+   "priority": 90,
+   "severity": "LOW",
+   "if": [
+    "UnusualHour(x)"
+   ],
+   "then": "OffHoursActivity(x)",
+   "description": "A transaction outside the user's usual hours is off-hours activity.",
+   "explanation": "The transaction hour is outside the user's usual hours, which is off-hours activity.",
+   "tags": [
+    "temporal",
+    "normalisation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R20",
+   "name": "Unverified device",
+   "category": "Device Risk",
+   "priority": 50,
+   "severity": "MEDIUM",
+   "if": [
+    "UnverifiedDevice(x)"
+   ],
+   "then": "MediumRisk(x)",
+   "description": "Payments from an unverified device warrant step-up authentication.",
+   "explanation": "An unverified device alone raises the risk to MEDIUM.",
+   "tags": [
+    "device"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R21",
+   "name": "New geographic location",
+   "category": "Geographic Risk",
+   "priority": 50,
+   "severity": "MEDIUM",
+   "if": [
+    "NewLocation(x)"
+   ],
+   "then": "MediumRisk(x)",
+   "description": "A payment from a location the user has never used warrants step-up authentication.",
+   "explanation": "A new geographic location alone raises the risk to MEDIUM.",
+   "tags": [
+    "geographic"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R22",
+   "name": "Authentication anomaly",
+   "category": "Authentication Risk",
+   "priority": 50,
+   "severity": "MEDIUM",
+   "if": [
+    "AuthenticationAnomaly(x)"
+   ],
+   "then": "MediumRisk(x)",
+   "description": "Anomalous login behaviour weakens confidence in the session.",
+   "explanation": "An authentication anomaly alone raises the risk to MEDIUM.",
+   "tags": [
+    "authentication"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R23",
+   "name": "Account anomaly",
+   "category": "Behavioural Risk",
+   "priority": 50,
+   "severity": "MEDIUM",
+   "if": [
+    "AccountAnomaly(x)"
+   ],
+   "then": "MediumRisk(x)",
+   "description": "Account lifecycle anomalies are common in account-takeover and mule scenarios.",
+   "explanation": "An account anomaly alone raises the risk to MEDIUM.",
+   "tags": [
+    "account"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R24",
+   "name": "Elevated transaction value",
+   "category": "Transaction Risk",
+   "priority": 50,
+   "severity": "MEDIUM",
+   "if": [
+    "ElevatedValue(x)"
+   ],
+   "then": "MediumRisk(x)",
+   "description": "High-value payments warrant additional identity verification.",
+   "explanation": "An elevated transaction value alone raises the risk to MEDIUM.",
+   "tags": [
+    "amount"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R25",
+   "name": "Night-time burst of transactions",
+   "category": "Behavioural Risk",
+   "priority": 55,
+   "severity": "MEDIUM",
+   "if": [
+    "OffHoursActivity(x)",
+    "HighFrequency(x)"
+   ],
+   "then": "MediumRisk(x)",
+   "description": "Rapid payments outside normal hours indicate automated or hurried activity. Neither factor alone is treated as risky.",
+   "explanation": "Off-hours activity combined with high transaction frequency raises the risk to MEDIUM.",
+   "tags": [
+    "temporal",
+    "velocity"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R30",
+   "name": "High amount from unverified device",
+   "category": "Composite Risk",
+   "priority": 70,
+   "severity": "HIGH",
+   "if": [
+    "HighAmount(x)",
+    "UnverifiedDevice(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "A high-value payment from an unverified device is a classic account-takeover pattern.",
+   "explanation": "A high amount combined with an unverified device raises the risk to HIGH.",
+   "tags": [
+    "composite",
+    "device",
+    "amount"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R31",
+   "name": "Authentication anomaly from new location",
+   "category": "Composite Risk",
+   "priority": 70,
+   "severity": "HIGH",
+   "if": [
+    "AuthenticationAnomaly(x)",
+    "NewLocation(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "Anomalous login behaviour combined with a new location suggests credential misuse.",
+   "explanation": "An authentication anomaly combined with a new location raises the risk to HIGH.",
+   "tags": [
+    "composite",
+    "authentication",
+    "geographic"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R32",
+   "name": "Unverified device in new location",
+   "category": "Composite Risk",
+   "priority": 68,
+   "severity": "HIGH",
+   "if": [
+    "UnverifiedDevice(x)",
+    "NewLocation(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "A device and a location that are both unfamiliar suggest the session is not the genuine user.",
+   "explanation": "An unverified device in a new location raises the risk to HIGH.",
+   "tags": [
+    "composite",
+    "device",
+    "geographic"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R33",
+   "name": "Elevated value with authentication anomaly",
+   "category": "Composite Risk",
+   "priority": 68,
+   "severity": "HIGH",
+   "if": [
+    "ElevatedValue(x)",
+    "AuthenticationAnomaly(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "Large payments after anomalous authentication are high-impact fraud candidates.",
+   "explanation": "An elevated value combined with an authentication anomaly raises the risk to HIGH.",
+   "tags": [
+    "composite",
+    "amount",
+    "authentication"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R34",
+   "name": "Elevated value on anomalous account",
+   "category": "Composite Risk",
+   "priority": 68,
+   "severity": "HIGH",
+   "if": [
+    "AccountAnomaly(x)",
+    "ElevatedValue(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "A dormant or reactivated account suddenly moving significant value is a mule/takeover pattern.",
+   "explanation": "An account anomaly combined with an elevated value raises the risk to HIGH.",
+   "tags": [
+    "composite",
+    "account",
+    "amount"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R35",
+   "name": "Elevated value at high velocity",
+   "category": "Composite Risk",
+   "priority": 66,
+   "severity": "HIGH",
+   "if": [
+    "HighFrequency(x)",
+    "ElevatedValue(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "High-value payments at high velocity indicate cash-out behaviour.",
+   "explanation": "High transaction frequency combined with an elevated value raises the risk to HIGH.",
+   "tags": [
+    "composite",
+    "velocity",
+    "amount"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R36",
+   "name": "Session hijack on trusted device",
+   "category": "Authentication Risk",
+   "priority": 72,
+   "severity": "HIGH",
+   "if": [
+    "SessionIntegrityConcern(x)",
+    "ElevatedValue(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "A trusted device with a high-risk login and a large payment suggests a hijacked session. Analyst review is warranted.",
+   "explanation": "A trusted device paired with a high-risk login and an elevated value raises the risk to HIGH and escalates to analyst review.",
+   "tags": [
+    "composite",
+    "authentication",
+    "analyst_escalation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R37",
+   "name": "Accumulation of weak signals",
+   "category": "Composite Risk",
+   "priority": 60,
+   "severity": "HIGH",
+   "if": [
+    "UnverifiedDevice(x)",
+    "ElevatedValue(x)",
+    "NewLocation(x)",
+    "OffHoursActivity(x)",
+    "AuthenticationAnomaly(x)",
+    "HighFrequency(x)",
+    "AccountAnomaly(x)"
+   ],
+   "then": "HighRisk(x)",
+   "description": "Three or more independent indicators together indicate a materially elevated risk even if no specific pair rule matches.",
+   "explanation": "Three or more independent risk indicators raise the risk to HIGH.",
+   "min_matches": 3,
+   "tags": [
+    "composite",
+    "accumulation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R40",
+   "name": "High risk, off-hours, new location",
+   "category": "Composite Risk",
+   "priority": 80,
+   "severity": "CRITICAL",
+   "if": [
+    "HighRisk(x)",
+    "OffHoursActivity(x)",
+    "NewLocation(x)"
+   ],
+   "then": "CriticalRisk(x)",
+   "description": "A high-risk transaction made off-hours from an unfamiliar location is a strong takeover signal.",
+   "explanation": "A HIGH-risk conclusion combined with off-hours activity and a new location escalates to CRITICAL.",
+   "tags": [
+    "composite",
+    "escalation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R41",
+   "name": "High risk with authentication anomaly at high velocity",
+   "category": "Composite Risk",
+   "priority": 80,
+   "severity": "CRITICAL",
+   "if": [
+    "HighRisk(x)",
+    "AuthenticationAnomaly(x)",
+    "HighFrequency(x)"
+   ],
+   "then": "CriticalRisk(x)",
+   "description": "Rapid payments after anomalous authentication indicate active exploitation of a compromised account.",
+   "explanation": "A HIGH-risk conclusion combined with an authentication anomaly and high velocity escalates to CRITICAL.",
+   "tags": [
+    "composite",
+    "escalation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R42",
+   "name": "Account takeover pattern",
+   "category": "Composite Risk",
+   "priority": 82,
+   "severity": "CRITICAL",
+   "if": [
+    "AccountAnomaly(x)",
+    "AuthenticationAnomaly(x)",
+    "UnverifiedDevice(x)"
+   ],
+   "then": "CriticalRisk(x)",
+   "description": "A dormant/reactivated account with anomalous login on an unverified device is the canonical account-takeover signature.",
+   "explanation": "An account anomaly, an authentication anomaly and an unverified device together indicate account takeover and escalate to CRITICAL.",
+   "tags": [
+    "composite",
+    "escalation",
+    "account_takeover"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R43",
+   "name": "Multiple strong risk indicators",
+   "category": "Composite Risk",
+   "priority": 64,
+   "severity": "CRITICAL",
+   "if": [
+    "UnverifiedDevice(x)",
+    "ElevatedValue(x)",
+    "NewLocation(x)",
+    "OffHoursActivity(x)",
+    "AuthenticationAnomaly(x)",
+    "HighFrequency(x)",
+    "AccountAnomaly(x)"
+   ],
+   "then": "CriticalRisk(x)",
+   "description": "Five or more independent indicators leave little doubt that the transaction is anomalous.",
+   "explanation": "Five or more independent risk indicators escalate the risk to CRITICAL.",
+   "min_matches": 5,
+   "tags": [
+    "composite",
+    "accumulation",
+    "escalation"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  },
+  {
+   "id": "R50",
+   "name": "Trusted device in familiar location",
+   "category": "Mitigating Evidence",
+   "priority": 30,
+   "severity": "LOW",
+   "if": [
+    "TrustedDevice(x)",
+    "KnownLocation(x)",
+    "ActiveAccount(x)"
+   ],
+   "then": "LowRisk(x)",
+   "description": "A trusted device, a familiar location and an active account are strong evidence of genuine behaviour. This is mitigating evidence only: it never overrides a higher risk conclusion.",
+   "explanation": "A trusted device in a familiar location on an active account supports a LOW classification.",
+   "tags": [
+    "mitigating"
+   ],
+   "status": "ACTIVE",
+   "version": "1.0.0"
+  }
+ ]
+}
